@@ -14,8 +14,11 @@ The following guides illustrate how to use some features concretely:
 * [Creating a Batch Service](https://spring.io/guides/gs/batch-processing/)
 
 
-FIRST COMMIT (basic tasklet)
+# FIRST COMMIT (basic tasklet)
 1. schema-mysql.sql file taken from spring batch core and inserted to docker from dockerfile
 2. docker exec -i -t container-name-here sh | command before for interactive access
 3. mysql -u root -p password for checking things
+
+# SECOND COMMIT (added restart-ability)
+1. added unique identifying job parameters so that it can run again and again
 
