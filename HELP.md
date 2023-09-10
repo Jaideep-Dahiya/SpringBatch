@@ -22,3 +22,5 @@ The following guides illustrate how to use some features concretely:
 # SECOND COMMIT (added restart-ability)
 1. added unique identifying job parameters so that it can run again and again
 
+# THIRD COMMIT (flat file reader writer)
+1. added csv file reading and text file output
