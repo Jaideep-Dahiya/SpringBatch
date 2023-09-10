@@ -1,0 +1,7 @@
+Customer{firstName='John', lastName='Doe', address='120 jefferson st.', city='Riverside', state='NJ', pin=8075}
+Customer{firstName='Jack', lastName='McGinnis', address='220 hobo Av.', city='Phila', state='PA', pin=9119}
+Customer{firstName='John "Da Man"', lastName='Repici', address='120 Jefferson St.', city='Riverside', state='NJ', pin=8075}
+Customer{firstName='Stephen', lastName='Tyler', address='7452 Terrace "At the Plaza" road', city='SomeTown', state='SD', pin=91234}
+Customer{firstName='', lastName='Blankman', address='', city='SomeTown', state='SD', pin=298}
+Customer{firstName='Joan "the bone", Anne', lastName='Jet', address='9th, at Terrace plc', city='Desert City', state='CO', pin=123}
+Customer{firstName='jaideep', lastName='dahiya', address='59 sector 9', city='faridabad', state='HR', pin=121006}
