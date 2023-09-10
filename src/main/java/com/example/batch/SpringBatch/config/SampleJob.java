@@ -20,51 +20,22 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@EnableBatchProcessing(dataSourceRef = "dataSource", transactionManagerRef = "batchTransactionManager")
+@EnableBatchProcessing
 public class SampleJob{
-
-
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/db_example");
-        dataSource.setUsername("springuser");
-        dataSource.setPassword("ThePassword");
-        return dataSource;
-    }
-
-    @Bean
-    public JdbcTransactionManager batchTransactionManager(DataSource dataSource){
-        return new JdbcTransactionManager(dataSource);
-    }
-
 
     @Bean
     public Job firstJob(JobRepository jobRepository, Step firstStep) {
 //        Sample Job as of Spring Batch 5
         return new JobBuilder("first job", jobRepository)
                 .start(firstStep)
-//                .next(secondStep())
-//                .next(thirdStep())
                 .build();
-
     }
 
     @Bean
     public Step firstStep(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
-        System.out.println("hello");
         return new StepBuilder("first step", jobRepository)
                 .tasklet(filePrintingTaskletBean(), transactionManager)
                 .build();
-    }
-
-    @Bean
-    public Tasklet firstTask() {
-        return (contribution, chunkContext) -> {
-            System.out.println("This is first tasklet step");
-            return RepeatStatus.FINISHED;
-        };
     }
 
     @Bean

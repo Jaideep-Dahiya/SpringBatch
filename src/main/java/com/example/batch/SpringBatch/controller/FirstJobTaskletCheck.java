@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping("/job")
@@ -24,7 +25,7 @@ public class FirstJobTaskletCheck {
     public ResponseEntity<String> startJob() {
         try {
             JobParameters jobParameters = new JobParametersBuilder()
-                    .addString("paramName", "paramValue") // Example parameter
+                    .addDate("ExecutionTime", new Date()) // Example parameter
                     .toJobParameters();
 
             JobExecution jobExecution = jobLauncher.run(job, jobParameters);
